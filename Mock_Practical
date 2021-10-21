@@ -1,0 +1,39 @@
+s=input("Enter first & last name: ")
+str=s.split(" ")
+print(str)
+strlist=[]
+temp=" "
+def length1(str):
+    c=0
+    for i in str:
+        c=c+1
+        return(c)
+def length():
+    max=length1(str[0])
+    for i in str:
+        l=length1(i)
+        if l>max:
+            max=l
+    print("The maximum length is of: ",i)
+def charfreq():
+    c=0
+    ch=input("Enter the letter for which frequency is to be found: ")
+    for i in s:
+        if (i==ch):
+            c=c+1
+    print("The frequenzy is: ",c)
+def pal(temp):
+    for i in s:
+        temp=i+temp
+    print("The reversed word is: ",temp)
+    
+    if(s==s[::-1]):
+      print("The string is a palindrome. ")
+    else:
+      print("The string is not a palindrome. ")
+         
+l=length1(str)
+length()
+frequenzy()
+p=pal(temp)
+charfreq()   
