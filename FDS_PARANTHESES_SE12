@@ -1,0 +1,74 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+void balance_parantheses();
+
+int main()
+{
+    int b;
+    for (int i=0;i<b;i++)
+    {
+        balance_parantheses();
+    }
+    return 0;
+}
+void balance_parantheses()
+{
+    stack<char> a;
+    string s;
+    cout<<"Enter string: ";
+    cin>>s;
+    
+    int flag = 0;
+    
+    for(int i=0;i<s.length();i++)
+    {
+        if (s[i] == '{' || s[i] == '(' || s[i] == '[')
+        {
+            a.push(s[i]);
+            flag = 1;
+        }
+        if (!a.empty())
+        {
+            if (s[i] == '}') 
+            {
+                if (a.top() == '{')
+                {
+                    a.pop();
+                    continue;
+                }
+                else
+                break;
+            
+        }
+        if (s[i] == ']')
+        {
+            if (a.top() == '[')
+            {
+                a.pop();
+                continue;
+            }
+            else
+            break;
+        }
+        if (s[i] == ')')
+        {
+            if (a.top() == '(')
+            {
+                a.pop();
+                continue;
+            }
+            else
+            break;
+        }
+    }
+    else 
+    {
+        break;
+    }
+    if ((a.empty()) && (flag == 1))
+    cout<<"Yes,it is balanced"<<endl;
+    else
+    cout<<"No,it is not balanced"<<endl;
+    }
+}
